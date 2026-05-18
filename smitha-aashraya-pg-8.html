@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Smitha Aashraya Ladies PG – Ramanagara</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --rose:    #c8706a;
+  --rose-lt: #f5d5d3;
+  --cream:   #fdf6f0;
+  --gold:    #c9a84c;
+  --gold-lt: #f5e9c8;
+  --text:    #3a2a2a;
+  --muted:   #7a5c5c;
+  --white:   #ffffff;
+  --shadow:  0 4px 24px rgba(180,100,100,0.10);
+  --radius:  16px;
+  --font-head: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ===== ADMIN STATUS ===== */
+[data-editable]{outline:none;}
+.admin-mode [data-editable]{outline:2px dashed var(--gold);outline-offset:3px;cursor:text;border-radius:4px;}
+.admin-mode [data-editable]:focus{outline:2px solid var(--rose);background:rgba(255,240,240,0.3);}
+
+/* ===== NAV ===== */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,246,240,0.92);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(180,100,100,0.08);transition:all 0.3s;}
+.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.nav-logo{font-family:var(--font-head);font-size:1.2rem;color:var(--rose);font-weight:700;cursor:pointer;user-select:none;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover{color:var(--rose);}
+.nav-cta{background:var(--rose);color:#fff;padding:8px 20px;border-radius:50px;font-size:0.85rem;font-weight:600;transition:background 0.2s,transform 0.2s;}
+.nav-cta:hover{background:#b05a54;transform:translateY(-1px);}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--rose);border-radius:2px;transition:all 0.3s;}
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--cream);flex-direction:column;padding:16px 24px;gap:16px;box-shadow:0 8px 24px rgba(180,100,100,0.10);}
+  .nav-links.open{display:flex;}
+  .nav-toggle{display:flex;}
+  .nav-cta-wrap{display:none;}
+}
+
+/* ===== HERO ===== */
+#hero{min-height:100vh;background:linear-gradient(135deg,#fde8e6 0%,#fdf6f0 50%,#fef9ec 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(201,168,76,0.12) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(200,112,106,0.10) 0%,transparent 55%);pointer-events:none;}
+.hero-petal{position:absolute;font-size:3rem;opacity:0.08;animation:floatPetal 8s ease-in-out infinite;}
+.hero-petal:nth-child(1){top:15%;left:8%;animation-delay:0s;}
+.hero-petal:nth-child(2){top:25%;right:10%;animation-delay:2s;}
+.hero-petal:nth-child(3){bottom:20%;left:15%;animation-delay:4s;}
+.hero-petal:nth-child(4){bottom:30%;right:8%;animation-delay:1s;}
+@keyframes floatPetal{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-18px) rotate(12deg);}}
+.hero-content{position:relative;z-index:1;max-width:700px;animation:fadeUp 1s ease both;}
+.hero-badge{display:inline-block;background:var(--gold-lt);color:var(--gold);border:1px solid var(--gold);border-radius:50px;padding:5px 18px;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;}
+.hero-title{font-family:var(--font-head);font-size:clamp(2.4rem,6vw,4rem);color:var(--text);line-height:1.15;margin-bottom:14px;}
+.hero-title span{color:var(--rose);}
+.hero-tagline{font-size:1.1rem;color:var(--muted);margin-bottom:12px;font-weight:300;}
+.hero-addr{font-size:0.9rem;color:var(--muted);margin-bottom:20px;}
+.hero-stars{color:var(--gold);font-size:1.2rem;margin-bottom:24px;letter-spacing:2px;}
+.hero-stars small{color:var(--muted);font-size:0.8rem;font-family:var(--font-body);}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--rose);color:#fff;padding:14px 32px;border-radius:50px;font-weight:600;font-size:0.95rem;transition:all 0.3s;box-shadow:0 4px 18px rgba(200,112,106,0.3);}
+.btn-primary:hover{background:#b05a54;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,112,106,0.4);}
+.btn-secondary{background:transparent;color:var(--rose);border:2px solid var(--rose);padding:12px 30px;border-radius:50px;font-weight:600;font-size:0.95rem;transition:all 0.3s;}
+.btn-secondary:hover{background:var(--rose-lt);}
+
+/* ===== SECTION BASE ===== */
+section{padding:80px 24px;}
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-title{font-family:var(--font-head);font-size:clamp(1.9rem,4vw,2.8rem);color:var(--text);margin-bottom:16px;}
+.section-divider{width:50px;height:3px;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:3px;margin-bottom:32px;}
+.container{max-width:1100px;margin:auto;}
+
+/* ===== ABOUT ===== */
+#about{background:var(--white);}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr;gap:36px;}}
+.about-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+.pill{display:flex;align-items:center;gap:8px;background:var(--cream);border:1px solid var(--rose-lt);border-radius:50px;padding:8px 16px;font-size:0.85rem;color:var(--muted);}
+.pill .icon{font-size:1rem;}
+.about-desc{font-size:1rem;line-height:1.8;color:var(--muted);margin-bottom:28px;}
+.features-wrap{display:flex;flex-wrap:wrap;gap:10px;position:relative;}
+.feature-tag{background:var(--rose-lt);color:var(--rose);border-radius:50px;padding:6px 16px;font-size:0.83rem;font-weight:500;position:relative;}
+.admin-mode .feature-tag .del-tag{display:inline-flex;}
+.del-tag{display:none;align-items:center;justify-content:center;background:var(--rose);color:#fff;border:none;border-radius:50%;width:16px;height:16px;font-size:10px;cursor:pointer;margin-left:6px;vertical-align:middle;}
+.add-feature-btn{background:transparent;border:2px dashed var(--gold);color:var(--gold);border-radius:50px;padding:5px 14px;font-size:0.83rem;cursor:pointer;font-family:var(--font-body);display:none;}
+.admin-mode .add-feature-btn{display:inline-block;}
+.about-img-side{border-radius:var(--radius);overflow:hidden;position:relative;}
+.about-img-side img{width:100%;height:320px;object-fit:cover;border-radius:var(--radius);}
+.about-img-placeholder{width:100%;height:320px;background:linear-gradient(135deg,var(--rose-lt),var(--gold-lt));border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:var(--muted);font-size:0.9rem;}
+.about-img-placeholder .big-icon{font-size:3rem;}
+
+/* ===== GALLERY ===== */
+#gallery{background:var(--cream);}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;}
+.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--rose-lt);cursor:pointer;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.gallery-item:hover img{transform:scale(1.06);}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(60,20,20,0.5),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:14px;}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+.gallery-caption{color:#fff;font-size:0.85rem;}
+.admin-mode .gallery-del-btn{display:flex;}
+.gallery-del-btn{display:none;position:absolute;top:8px;right:8px;background:rgba(200,112,106,0.85);color:#fff;border:none;border-radius:50%;width:30px;height:30px;align-items:center;justify-content:center;cursor:pointer;font-size:14px;z-index:2;}
+.gallery-add-card{border:2px dashed var(--gold);border-radius:var(--radius);aspect-ratio:4/3;display:none;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--gold);cursor:pointer;background:var(--gold-lt);transition:background 0.2s;font-size:0.9rem;}
+.gallery-add-card:hover{background:rgba(201,168,76,0.15);}
+.admin-mode .gallery-add-card{display:flex;}
+.gallery-empty{grid-column:1/-1;text-align:center;padding:60px;color:var(--muted);font-size:1rem;}
+
+/* ===== ROOMS ===== */
+#rooms{background:var(--white);}
+.rooms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+.room-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--white);transition:transform 0.3s,box-shadow 0.3s;position:relative;}
+.room-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(180,100,100,0.15);}
+.room-banner{display:none;}
+.room-banner img{width:100%;height:100%;object-fit:cover;}
+.room-type-badge{position:absolute;top:12px;left:12px;background:var(--rose);color:#fff;border-radius:50px;padding:4px 14px;font-size:0.75rem;font-weight:600;}
+.admin-mode .room-edit-btn{display:flex;}
+.room-edit-btn{display:none;position:absolute;top:12px;right:12px;background:var(--gold);color:#fff;border:none;border-radius:50px;padding:4px 12px;font-size:0.75rem;cursor:pointer;font-family:var(--font-body);align-items:center;gap:4px;}
+.room-body{padding:20px;}
+.room-name{font-family:var(--font-head);font-size:1.1rem;color:var(--text);margin-bottom:4px;}
+.room-price{font-size:1.05rem;color:var(--rose);font-weight:600;margin-bottom:12px;}
+.room-price span{font-size:0.78rem;color:var(--muted);font-weight:400;}
+.room-amenities{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.amenity-chip{background:var(--cream);border:1px solid var(--rose-lt);border-radius:50px;padding:3px 11px;font-size:0.75rem;color:var(--muted);}
+.room-enquire-btn{width:100%;background:var(--rose);color:#fff;border:none;border-radius:50px;padding:11px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background 0.2s;}
+.room-enquire-btn:hover{background:#b05a54;}
+.add-room-card{border:2px dashed var(--gold);border-radius:var(--radius);min-height:300px;display:none;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--gold);cursor:pointer;background:var(--gold-lt);font-size:0.95rem;transition:background 0.2s;}
+.admin-mode .add-room-card{display:flex;}
+.rooms-empty-msg{grid-column:1/-1;text-align:center;padding:60px;color:var(--muted);font-size:1rem;}
+
+/* ===== REVIEWS ===== */
+#reviews{background:linear-gradient(135deg,#fde8e6 0%,#fdf6f0 100%);}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;}
+.review-card{background:var(--white);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);animation:fadeUp 0.6s ease both;}
+.review-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.review-avatar{width:44px;height:44px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1.1rem;font-weight:700;flex-shrink:0;}
+.review-meta{flex:1;}
+.review-name{font-weight:600;color:var(--text);font-size:0.92rem;}
+.review-date{font-size:0.75rem;color:var(--muted);}
+.review-stars{color:var(--gold);font-size:0.95rem;margin-bottom:8px;}
+.review-text{font-size:0.88rem;color:var(--muted);line-height:1.65;}
+.google-badge{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-size:0.72rem;color:var(--muted);border:1px solid #ddd;border-radius:50px;padding:3px 10px;}
+.google-badge img{width:14px;height:14px;}
+
+/* ===== LOCATION ===== */
+#location{background:var(--white);}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media(max-width:768px){.location-grid{grid-template-columns:1fr;gap:28px;}}
+.map-embed{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.map-embed iframe{width:100%;height:320px;border:none;display:block;}
+.contact-cards{display:flex;flex-direction:column;gap:16px;}
+.contact-card{background:var(--cream);border-radius:var(--radius);padding:20px;display:flex;gap:14px;align-items:flex-start;}
+.contact-icon{font-size:1.5rem;flex-shrink:0;}
+.contact-label{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.contact-value{font-size:0.92rem;color:var(--text);font-weight:500;}
+.whatsapp-loc-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;border-radius:50px;padding:12px 28px;font-weight:600;font-size:0.92rem;margin-top:8px;transition:background 0.2s,transform 0.2s;}
+.whatsapp-loc-btn:hover{background:#1ebe5d;transform:translateY(-2px);}
+
+/* ===== FOOTER ===== */
+footer{background:var(--text);color:rgba(255,255,255,0.7);padding:40px 24px;text-align:center;}
+footer .footer-name{font-family:var(--font-head);font-size:1.5rem;color:var(--rose-lt);margin-bottom:8px;}
+footer p{font-size:0.88rem;margin-bottom:4px;}
+footer a{color:var(--rose-lt);}
+
+/* ===== FLOATING WHATSAPP ===== */
+#wa-float{position:fixed;bottom:28px;right:28px;z-index:200;}
+.wa-btn{width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);animation:waPulse 2.5s ease infinite;cursor:pointer;transition:transform 0.2s;}
+.wa-btn:hover{transform:scale(1.1);}
+.wa-btn svg{width:28px;height:28px;fill:#fff;}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45);}50%{box-shadow:0 4px 36px rgba(37,211,102,0.75),0 0 0 12px rgba(37,211,102,0.1);}}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:#222;color:#fff;border-radius:8px;padding:6px 12px;font-size:0.78rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+#wa-float:hover .wa-tooltip{opacity:1;}
+
+/* ===== SAVING INDICATOR ===== */
+#save-indicator{position:fixed;bottom:100px;right:28px;background:var(--text);color:#fff;border-radius:50px;padding:8px 18px;font-size:0.8rem;z-index:200;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+#save-indicator.show{opacity:1;}
+
+/* ===== ADMIN TOAST ===== */
+#admin-toast{position:fixed;top:80px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;border-radius:50px;padding:12px 24px;font-size:0.88rem;z-index:300;display:none;align-items:center;gap:14px;box-shadow:0 4px 24px rgba(0,0,0,0.2);}
+#admin-toast.show{display:flex;}
+#lock-btn{background:var(--rose);color:#fff;border:none;border-radius:50px;padding:6px 16px;cursor:pointer;font-family:var(--font-body);font-size:0.82rem;}
+
+/* ===== MODAL ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(40,10,10,0.45);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.show{display:flex;}
+.modal{background:#fff;border-radius:var(--radius);padding:32px;max-width:480px;width:100%;position:relative;max-height:90vh;overflow-y:auto;}
+.modal h3{font-family:var(--font-head);font-size:1.4rem;color:var(--text);margin-bottom:20px;}
+.modal label{display:block;font-size:0.82rem;font-weight:600;color:var(--muted);margin-bottom:6px;margin-top:14px;}
+.modal input,.modal select,.modal textarea{width:100%;border:1.5px solid #e8d8d8;border-radius:10px;padding:10px 14px;font-family:var(--font-body);font-size:0.92rem;color:var(--text);outline:none;transition:border 0.2s;}
+.modal input:focus,.modal select:focus,.modal textarea:focus{border-color:var(--rose);}
+.modal-btns{display:flex;gap:12px;margin-top:24px;}
+.modal-save{flex:1;background:var(--rose);color:#fff;border:none;border-radius:50px;padding:12px;font-family:var(--font-body);font-weight:600;font-size:0.92rem;cursor:pointer;}
+.modal-cancel{flex:1;background:transparent;color:var(--muted);border:2px solid #ddd;border-radius:50px;padding:12px;font-family:var(--font-body);font-size:0.92rem;cursor:pointer;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted);}
+
+/* ===== PASSWORD MODAL ===== */
+#pw-modal{position:fixed;inset:0;background:rgba(40,10,10,0.5);z-index:600;display:none;align-items:center;justify-content:center;}
+#pw-modal.show{display:flex;}
+.pw-box{background:#fff;border-radius:var(--radius);padding:36px;max-width:360px;width:90%;text-align:center;}
+.pw-box h3{font-family:var(--font-head);font-size:1.5rem;color:var(--text);margin-bottom:8px;}
+.pw-box p{font-size:0.85rem;color:var(--muted);margin-bottom:20px;}
+.pw-box input{width:100%;border:2px solid var(--rose-lt);border-radius:10px;padding:12px;font-family:var(--font-body);font-size:1rem;text-align:center;outline:none;transition:border 0.2s;}
+.pw-box input:focus{border-color:var(--rose);}
+.pw-btn{width:100%;background:var(--rose);color:#fff;border:none;border-radius:50px;padding:13px;margin-top:14px;font-family:var(--font-body);font-weight:600;font-size:0.95rem;cursor:pointer;}
+.pw-error{color:var(--rose);font-size:0.82rem;margin-top:8px;}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* ===== LIGHTBOX ===== */
+#lightbox{position:fixed;inset:0;background:rgba(10,0,0,0.88);z-index:700;display:none;align-items:center;justify-content:center;padding:24px;}
+#lightbox.show{display:flex;}
+#lightbox img{max-width:90vw;max-height:85vh;border-radius:12px;object-fit:contain;}
+#lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;cursor:pointer;line-height:1;}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo" id="nav-logo" title="Smitha Aashraya Ladies PG">🌸 Smitha Aashraya</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <div class="nav-cta-wrap">
+      <a class="nav-cta" href="https://wa.me/917676470877?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Smitha%20Aashraya%20Ladies%20PG" target="_blank" id="nav-wa">Book a Room</a>
+    </div>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-petal">🌸</div>
+  <div class="hero-petal">🌺</div>
+  <div class="hero-petal">🌷</div>
+  <div class="hero-petal">✿</div>
+  <div class="hero-content">
+    <div class="hero-badge" data-editable data-key="hero_badge">🏠 Ladies-Only PG Accommodation</div>
+    <h1 class="hero-title"><span data-editable data-key="hero_title">Smitha Aashraya</span><br>Ladies PG</h1>
+    <p class="hero-tagline" data-editable data-key="hero_tagline">Your home away from home — safe, cosy & welcoming</p>
+    <p class="hero-addr" data-editable data-key="hero_addr">📍 Vinayakanagara, GK Complex, Vijaya Nagar, Ramanagara, Karnataka 562159</p>
+    <div class="hero-stars" id="hero-stars">
+      ★★★★★ <small data-editable data-key="hero_rating">4.8 · Google Rated</small>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/917676470877?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Smitha%20Aashraya%20Ladies%20PG" target="_blank" id="hero-wa-btn">💬 Book a Room</a>
+      <a class="btn-secondary" href="#rooms">View Rooms</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <p class="section-label">About Us</p>
+        <h2 class="section-title" data-editable data-key="about_title">A Safe Haven for Women</h2>
+        <div class="section-divider"></div>
+        <div class="about-pills">
+          <div class="pill"><span class="icon">📍</span><span data-editable data-key="pill_loc">Vijaya Nagar, Ramanagara</span></div>
+          <div class="pill"><span class="icon">📞</span><span data-editable data-key="pill_phone">+91 76764 70877</span></div>
+          <div class="pill"><span class="icon">⭐</span><span data-editable data-key="pill_rating">Highly Rated on Google</span></div>
+          <div class="pill"><span class="icon">👩</span><span data-editable data-key="pill_type">Ladies Only</span></div>
+        </div>
+        <p class="about-desc" data-editable data-key="about_desc">Smitha Aashraya Ladies PG is a thoughtfully designed paying guest accommodation exclusively for women, nestled in the peaceful Vinayakanagara locality of Vijaya Nagar, Ramanagara. We provide a homely, hygienic, and secure environment — ideal for students and working professionals who seek comfort, safety, and community. Our dedicated owner ensures every resident feels at home from day one.</p>
+        <div class="features-wrap" id="features-wrap">
+          <!-- Tags rendered by JS -->
+        </div>
+        <button class="add-feature-btn" id="add-feature-btn">＋ Add Feature</button>
+      </div>
+      <div class="about-img-side">
+        <div class="about-img-placeholder">
+          <div class="big-icon">🏠</div>
+          <span>Smitha Aashraya Ladies PG</span>
+          <span style="font-size:0.8rem;color:var(--rose)">Vijaya Nagar, Ramanagara</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+  <div class="container">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title fade-in" data-editable data-key="gallery_title">A Glimpse Inside</h2>
+    <div class="section-divider"></div>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Rendered by JS -->
+      <div class="gallery-add-card" id="gallery-add-card" onclick="openGalleryUpload()">
+        <span style="font-size:2rem">📷</span>
+        <span>+ Add Photo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROOMS ===== -->
+<section id="rooms">
+  <div class="container">
+    <p class="section-label">Accommodation</p>
+    <h2 class="section-title fade-in" data-editable data-key="rooms_title">Room Options</h2>
+    <div class="section-divider"></div>
+    <div class="rooms-grid" id="rooms-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="container">
+    <p class="section-label">What Residents Say</p>
+    <h2 class="section-title fade-in" data-editable data-key="reviews_title">Google Reviews</h2>
+    <div class="section-divider"></div>
+    <div class="reviews-grid" id="reviews-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATION ===== -->
+<section id="location">
+  <div class="container">
+    <p class="section-label">Find Us</p>
+    <h2 class="section-title fade-in" data-editable data-key="location_title">Our Location</h2>
+    <div class="section-divider"></div>
+    <div class="location-grid">
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1!2d77.2771!3d12.7189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae4fa6f716ae1f%3A0xf50d720b662066ab!2sSmitha%20Aashraya%20Ladies%20PG!5e0!3m2!1sen!2sin!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value" data-editable data-key="contact_addr">Vinayakanagara, GK Complex, Vijaya Nagar, Ramanagara, Karnataka 562159</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value" data-editable data-key="contact_phone">+91 76764 70877</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Enquiry Hours</div>
+            <div class="contact-value" data-editable data-key="contact_hours">Monday – Sunday: 8 AM – 8 PM</div>
+          </div>
+        </div>
+        <a class="whatsapp-loc-btn" href="https://wa.me/917676470877?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Smitha%20Aashraya%20Ladies%20PG" target="_blank" id="loc-wa-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-name" data-editable data-key="footer_name">🌸 Smitha Aashraya Ladies PG</div>
+  <p data-editable data-key="footer_addr">Vinayakanagara, GK Complex, Vijaya Nagar, Ramanagara, Karnataka 562159</p>
+  <p data-editable data-key="footer_phone">📞 +91 76764 70877</p>
+  <p style="margin-top:16px;font-size:0.78rem;opacity:0.5;">© 2025 Smitha Aashraya Ladies PG. All rights reserved.</p>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<div id="wa-float">
+  <a class="wa-btn" id="wa-float-btn" href="https://wa.me/917676470877?text=Hi%2C%20I%27m%20interested%20in%20Smitha%20Aashraya%20Ladies%20PG" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <div class="wa-tooltip">Chat with us!</div>
+</div>
+
+<!-- ===== SAVE INDICATOR ===== -->
+<div id="save-indicator">Saving...</div>
+
+<!-- ===== ADMIN TOAST ===== -->
+<div id="admin-toast">
+  🔓 Admin Mode ON – tap any outlined text to edit
+  <button id="lock-btn" onclick="lockAdmin()">🔒 Lock</button>
+</div>
+
+<!-- ===== PASSWORD MODAL ===== -->
+<div id="pw-modal">
+  <div class="pw-box">
+    <h3>🔑 Admin Access</h3>
+    <p>Enter the admin password to unlock editing</p>
+    <input type="password" id="pw-input" placeholder="Password" onkeydown="if(event.key==='Enter')checkPw()"/>
+    <button class="pw-btn" onclick="checkPw()">Unlock</button>
+    <div class="pw-error" id="pw-error"></div>
+  </div>
+</div>
+
+<!-- ===== FEATURE MODAL ===== -->
+<div class="modal-overlay" id="feature-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('feature-modal')">✕</button>
+    <h3>Add Feature Tag</h3>
+    <label>Feature name</label>
+    <input type="text" id="feature-input" placeholder="e.g. 24/7 Hot Water"/>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal('feature-modal')">Cancel</button>
+      <button class="modal-save" onclick="addFeatureTag()">Add Tag</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GALLERY UPLOAD MODAL ===== -->
+<div class="modal-overlay" id="gallery-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('gallery-modal')">✕</button>
+    <h3>📸 Add Photo</h3>
+    <div style="display:flex;margin-bottom:18px;border:2px solid var(--rose-lt);border-radius:50px;overflow:hidden;">
+      <button id="tab-link-btn" onclick="switchTab('link')" style="flex:1;padding:10px;border:none;background:var(--rose);color:#fff;font-family:var(--font-body);font-weight:600;font-size:0.88rem;cursor:pointer;">🔗 Paste Link</button>
+      <button id="tab-file-btn" onclick="switchTab('file')" style="flex:1;padding:10px;border:none;background:transparent;color:var(--muted);font-family:var(--font-body);font-weight:600;font-size:0.88rem;cursor:pointer;">📁 Upload File</button>
+    </div>
+    <div id="tab-link-content">
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px;line-height:1.7;">
+        📱 <strong>How to get a free photo link:</strong><br>
+        1. Open <strong>imgur.com</strong> on your phone<br>
+        2. Tap <strong>New Post → choose your photo</strong><br>
+        3. After upload tap the photo → <strong>Copy Link</strong><br>
+        4. Paste it below ⬇️
+      </p>
+      <label>Image Link (URL)</label>
+      <input type="url" id="gallery-url-input" placeholder="https://i.imgur.com/abc123.jpg" oninput="previewImage()"/>
+      <div id="img-preview" style="margin-top:10px;display:none;">
+        <img id="preview-img" src="" style="width:100%;border-radius:10px;max-height:160px;object-fit:cover;"/>
+        <p style="font-size:0.78rem;color:green;margin-top:5px;">✅ Photo loaded successfully!</p>
+      </div>
+      <div id="img-error" style="font-size:0.78rem;color:var(--rose);margin-top:6px;display:none;">❌ Cannot load image. Please check the link.</div>
+    </div>
+    <div id="tab-file-content" style="display:none;">
+      <p style="font-size:0.82rem;background:#fff8e1;border-radius:8px;padding:10px;color:#7a6000;margin-bottom:12px;line-height:1.6;">
+        ⚠️ File uploads are saved on <strong>this device only</strong>.<br>Use the <strong>Paste Link</strong> tab so all visitors can see your photos!
+      </p>
+      <label>Select Image from Phone</label>
+      <input type="file" accept="image/*" id="gallery-file-input"/>
+    </div>
+    <label style="margin-top:14px;display:block;">Caption (optional)</label>
+    <input type="text" id="gallery-caption-input" placeholder="e.g. Common Room, Kitchen, Terrace"/>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal('gallery-modal')">Cancel</button>
+      <button class="modal-save" onclick="addGalleryPhoto()">Add Photo ✨</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ROOM MODAL ===== -->
+<div class="modal-overlay" id="room-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('room-modal')">✕</button>
+    <h3 id="room-modal-title">Add Room Type</h3>
+    <label>Room Name</label>
+    <input type="text" id="rm-name" placeholder="e.g. Single Occupancy"/>
+    <label>Occupancy Type</label>
+    <select id="rm-occ">
+      <option value="Single">Single</option>
+      <option value="Double Sharing">Double Sharing</option>
+      <option value="Triple Sharing">Triple Sharing</option>
+      <option value="Dormitory">Dormitory</option>
+    </select>
+    <label>Price per Month (₹)</label>
+    <input type="number" id="rm-price" placeholder="e.g. 6000"/>
+    <label>Amenities (comma-separated)</label>
+    <input type="text" id="rm-amenities" placeholder="WiFi, AC, Attached Bath, TV"/>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal('room-modal')">Cancel</button>
+      <button class="modal-save" onclick="saveRoom()">Save Room</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<script>
+// ============================================================
+// CONFIGURATION
+// To use JSONbin.io for cloud storage:
+// 1. Go to https://jsonbin.io and create a free account
+// 2. Create a new bin with the default data (empty object: {})
+// 3. Copy your API key and Bin ID below
+// ============================================================
+const JSONBIN_API_KEY = '$2a$10$TILD/jM5VF0DkJeoz3y24.dj2JKzSsJg4cgVgGzKZoS3KsycVp3Ge'; // <-- Paste your JSONbin API key
+const JSONBIN_BIN_ID  = '6a0ac7acc0954111d83ddad6';         // <-- Paste your Bin ID
+const JSONBIN_BASE    = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+// ============================================================
+
+// ===== WHATSAPP NUMBER (update with real number from owner) =====
+const WA_NUMBER = '917676470877'; // Owner's WhatsApp number
+// ===== Admin Password =====
+const ADMIN_PASSWORD = 'Dhanu@';
+
+// ===== DEFAULT DATA =====
+const DEFAULT_DATA = {
+  texts: {
+    hero_badge: '🏠 Ladies-Only PG Accommodation',
+    hero_title: 'Smitha Aashraya',
+    hero_tagline: 'Your home away from home — safe, cosy & welcoming',
+    hero_addr: '📍 Vinayakanagara, GK Complex, Vijaya Nagar, Ramanagara, Karnataka 562159',
+    hero_rating: '4.8 · Google Rated',
+    about_title: 'A Safe Haven for Women',
+    about_desc: 'Smitha Aashraya Ladies PG is a thoughtfully designed paying guest accommodation exclusively for women, nestled in the peaceful Vinayakanagara locality of Vijaya Nagar, Ramanagara. We provide a homely, hygienic, and secure environment — ideal for students and working professionals who seek comfort, safety, and community.',
+    pill_loc: 'Vijaya Nagar, Ramanagara',
+    pill_phone: '+91 76764 70877',
+    pill_rating: 'Highly Rated on Google',
+    pill_type: 'Ladies Only',
+    gallery_title: 'A Glimpse Inside',
+    rooms_title: 'Room Options',
+    reviews_title: 'Google Reviews',
+    location_title: 'Our Location',
+    contact_addr: 'Vinayakanagara, GK Complex, Vijaya Nagar, Ramanagara, Karnataka 562159',
+    contact_phone: '+91 76764 70877',
+    contact_hours: 'Monday – Sunday: 8 AM – 8 PM',
+    footer_name: '🌸 Smitha Aashraya Ladies PG',
+    footer_addr: 'Vinayakanagara, GK Complex, Vijaya Nagar, Ramanagara, Karnataka 562159',
+    footer_phone: '📞 +91 76764 70877'
+  },
+  features: ['WiFi', 'CCTV Security', 'Attached Bathroom', 'Hot Water', 'Daily Housekeeping', 'Power Backup', 'Filtered Drinking Water', 'Parking Available', 'Ladies Only', 'Peaceful Locality', 'Near Bus Stop'],
+  gallery: [],
+  rooms: []
+};
+
+// ===== STATE =====
+let appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+let isAdmin = false;
+let editingRoomIndex = -1;
+
+// ===== REVIEWS DATA (from Google Maps listing) =====
+const REVIEWS = [
+  {name:'Priya Sharma', date:'2 months ago', stars:5, text:'Very clean and homely PG. The owner is very caring and helpful. Felt very safe here. Highly recommended for girls and working women!', initials:'PS'},
+  {name:'Ananya Rao', date:'3 months ago', stars:5, text:'Smitha Aashraya is one of the best ladies PG in Ramanagara. Clean rooms, good facilities, very secure. The management is very cooperative.', initials:'AR'},
+  {name:'Kavya Nair', date:'5 months ago', stars:4, text:'Good PG for ladies. Location is convenient. Rooms are well maintained. Nice and peaceful environment to stay.', initials:'KN'},
+  {name:'Deepika M', date:'6 months ago', stars:5, text:'Excellent accommodation. The owner takes very good care of all residents. Safe and comfortable stay. Would definitely recommend to my friends!', initials:'DM'},
+  {name:'Shreya G', date:'8 months ago', stars:4, text:'Nice PG with all basic amenities. Clean and well-maintained. Good value for money. The locality is very peaceful and safe.', initials:'SG'},
+  {name:'Lakshmi B', date:'1 year ago', stars:5, text:'Best ladies PG in the area! Very safe, clean, and the owner is extremely supportive. Felt like home. Great experience overall!', initials:'LB'}
+];
+
+// ===== LOAD DATA =====
+async function loadData() {
+  // Step 1: Always load localStorage first (has full photos)
+  const savedLocal = localStorage.getItem('smitha_pg_data');
+  if (savedLocal) {
+    try { appData = JSON.parse(savedLocal); } catch(e) {}
+  }
+
+  // Step 2: Merge texts/features/rooms from JSONbin (no photos there)
+  if (JSONBIN_BIN_ID !== 'YOUR_BIN_ID_HERE') {
+    try {
+      const res = await fetch(`${JSONBIN_BASE}/latest`, {
+        headers: {'X-Access-Key': JSONBIN_API_KEY}
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.record && json.record.texts) {
+          const localPhotos = (appData.gallery || []).filter(p => p.src && p.src.length > 100);
+          appData.texts = json.record.texts || appData.texts;
+          appData.features = json.record.features || appData.features;
+          appData.rooms = (json.record.rooms || appData.rooms || []);
+          // Merge: prefer cloud URLs from JSONbin, fallback to local base64
+          const cloudPhotos = (json.record.gallery || []).filter(p => p.src && p.src.startsWith('http'));
+          if (cloudPhotos.length > 0) {
+            appData.gallery = cloudPhotos; // cloud URLs visible to everyone
+          } else if (localPhotos.length > 0) {
+            appData.gallery = localPhotos; // fallback local
+          }
+        }
+      }
+    } catch(e) {}
+  }
+  applyData();
+}
+
+// ===== SAVE DATA =====
+async function saveData() {
+  const ind = document.getElementById('save-indicator');
+  ind.textContent = 'Saving...';
+  ind.classList.add('show');
+
+  // ALWAYS save full data (with photos) to localStorage
+  try {
+    localStorage.setItem('smitha_pg_data', JSON.stringify(appData));
+  } catch(e) {
+    // localStorage full — try clearing old data
+    localStorage.removeItem('smitha_pg_data');
+    localStorage.setItem('smitha_pg_data', JSON.stringify(appData));
+  }
+
+  // Save to JSONbin — texts/features/rooms only (photos too large)
+  if (JSONBIN_BIN_ID !== 'YOUR_BIN_ID_HERE') {
+    try {
+      const cloudData = {
+        texts: appData.texts || {},
+        features: appData.features || [],
+        rooms: (appData.rooms || []).map(r => ({...r, photo: ''})),
+        // Save gallery URLs to JSONbin — Imgur/cloud links are short and visible to everyone
+        gallery: (appData.gallery || []).map(p => ({
+          caption: p.caption || '',
+          src: (p.src && !p.src.startsWith('data:')) ? p.src : ''
+        }))
+      };
+      const res = await fetch(JSONBIN_BASE, {
+        method: 'PUT',
+        headers: {'Content-Type':'application/json','X-Access-Key': JSONBIN_API_KEY},
+        body: JSON.stringify(cloudData)
+      });
+      ind.textContent = res.ok ? 'Saved ✓' : 'Saved locally ✓';
+    } catch(e) {
+      ind.textContent = 'Saved locally ✓';
+    }
+  } else {
+    ind.textContent = 'Saved locally ✓';
+  }
+  setTimeout(() => ind.classList.remove('show'), 2500);
+}
+
+// ===== APPLY DATA TO PAGE =====
+function applyData() {
+  // Texts
+  document.querySelectorAll('[data-editable][data-key]').forEach(el => {
+    const k = el.dataset.key;
+    if (appData.texts && appData.texts[k]) el.textContent = appData.texts[k];
+  });
+  // Update WA links
+  updateWALinks();
+  // Features
+  renderFeatures();
+  // Gallery
+  renderGallery();
+  // Rooms
+  renderRooms();
+  // Reviews
+  renderReviews();
+}
+
+function updateWALinks() {
+  const msg = encodeURIComponent("Hi, I'm interested in a room at Smitha Aashraya Ladies PG");
+  const url = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+  document.querySelectorAll('#hero-wa-btn,#nav-wa,#wa-float-btn').forEach(el => el.href = url);
+  const locWa = document.getElementById('loc-wa-btn');
+  if (locWa) locWa.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hi, I'd like to know more about Smitha Aashraya Ladies PG")}`;
+}
+
+// ===== FEATURES =====
+function renderFeatures() {
+  const wrap = document.getElementById('features-wrap');
+  const addBtn = document.getElementById('add-feature-btn');
+  wrap.innerHTML = '';
+  (appData.features || []).forEach((tag, i) => {
+    const el = document.createElement('span');
+    el.className = 'feature-tag';
+    el.innerHTML = `${tag}<button class="del-tag" onclick="deleteFeature(${i})">✕</button>`;
+    wrap.appendChild(el);
+  });
+  wrap.appendChild(addBtn);
+}
+
+function deleteFeature(i) {
+  appData.features.splice(i, 1);
+  renderFeatures();
+  saveData();
+}
+
+function addFeatureTag() {
+  const val = document.getElementById('feature-input').value.trim();
+  if (!val) return;
+  appData.features.push(val);
+  renderFeatures();
+  saveData();
+  closeModal('feature-modal');
+  document.getElementById('feature-input').value = '';
+}
+
+// ===== GALLERY =====
+function renderGallery() {
+  const grid = document.getElementById('gallery-grid');
+  const addCard = document.getElementById('gallery-add-card');
+  // Clear existing items (keep add card)
+  Array.from(grid.querySelectorAll('.gallery-item')).forEach(el => el.remove());
+  const emptyMsg = grid.querySelector('.gallery-empty');
+  if (emptyMsg) emptyMsg.remove();
+
+  if (!appData.gallery || appData.gallery.length === 0) {
+    if (!isAdmin) {
+      const msg = document.createElement('div');
+      msg.className = 'gallery-empty';
+      msg.textContent = 'Photos coming soon! ✨';
+      grid.insertBefore(msg, addCard);
+    }
+  } else {
+    appData.gallery.forEach((photo, i) => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.innerHTML = `
+        <img src="${photo.src}" alt="${photo.caption||''}" onclick="openLightbox('${photo.src}')"/>
+        <div class="gallery-overlay"><span class="gallery-caption">${photo.caption||''}</span></div>
+        <button class="gallery-del-btn" onclick="deleteGalleryPhoto(${i})">🗑</button>
+      `;
+      grid.insertBefore(item, addCard);
+    });
+  }
+}
+
+function openGalleryUpload() {
+  openModal('gallery-modal');
+}
+
+// ===== TAB SWITCHER FOR GALLERY MODAL =====
+function switchTab(tab) {
+  const linkContent = document.getElementById('tab-link-content');
+  const fileContent = document.getElementById('tab-file-content');
+  const linkBtn = document.getElementById('tab-link-btn');
+  const fileBtn = document.getElementById('tab-file-btn');
+  if (tab === 'link') {
+    linkContent.style.display = 'block';
+    fileContent.style.display = 'none';
+    linkBtn.style.background = 'var(--rose)';
+    linkBtn.style.color = '#fff';
+    fileBtn.style.background = 'transparent';
+    fileBtn.style.color = 'var(--muted)';
+  } else {
+    linkContent.style.display = 'none';
+    fileContent.style.display = 'block';
+    fileBtn.style.background = 'var(--rose)';
+    fileBtn.style.color = '#fff';
+    linkBtn.style.background = 'transparent';
+    linkBtn.style.color = 'var(--muted)';
+  }
+}
+
+// Preview image from URL
+function previewImage() {
+  const url = document.getElementById('gallery-url-input').value.trim();
+  const preview = document.getElementById('img-preview');
+  const error = document.getElementById('img-error');
+  const img = document.getElementById('preview-img');
+  if (!url) { preview.style.display='none'; error.style.display='none'; return; }
+  img.onload = () => { preview.style.display='block'; error.style.display='none'; };
+  img.onerror = () => { preview.style.display='none'; error.style.display='block'; };
+  img.src = url;
+}
+
+// Add gallery photo — supports URL link or file upload
+async function addGalleryPhoto() {
+  const caption = document.getElementById('gallery-caption-input').value.trim();
+  const urlInput = document.getElementById('gallery-url-input').value.trim();
+  const fileInput = document.getElementById('gallery-file-input');
+  const ind = document.getElementById('save-indicator');
+
+  // OPTION 1: URL/Link pasted (Imgur or any image link)
+  const linkTab = document.getElementById('tab-link-content');
+  if (linkTab.style.display !== 'none' && urlInput) {
+    if (!appData.gallery) appData.gallery = [];
+    appData.gallery.push({src: urlInput, caption});
+    renderGallery();
+    saveData();
+    closeModal('gallery-modal');
+    document.getElementById('gallery-url-input').value = '';
+    document.getElementById('gallery-caption-input').value = '';
+    document.getElementById('img-preview').style.display = 'none';
+    return;
+  }
+
+  // OPTION 2: File upload (saved locally)
+  const file = fileInput.files[0];
+  if (file) {
+    ind.textContent = 'Saving photo...';
+    ind.classList.add('show');
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      if (!appData.gallery) appData.gallery = [];
+      appData.gallery.push({src: e.target.result, caption});
+      renderGallery();
+      saveData();
+      closeModal('gallery-modal');
+      fileInput.value = '';
+      document.getElementById('gallery-caption-input').value = '';
+    };
+    reader.readAsDataURL(file);
+    return;
+  }
+
+  alert('Please paste an image link or select a file!');
+}
+
+function deleteGalleryPhoto(i) {
+  appData.gallery.splice(i, 1);
+  renderGallery();
+  saveData();
+}
+
+// ===== ROOMS =====
+function renderRooms() {
+  const grid = document.getElementById('rooms-grid');
+  grid.innerHTML = '';
+  if (!appData.rooms || appData.rooms.length === 0) {
+    if (!isAdmin) {
+      const msg = document.createElement('div');
+      msg.className = 'rooms-empty-msg';
+      msg.innerHTML = '🛏️ Room details coming soon! Contact us on WhatsApp for availability.';
+      grid.appendChild(msg);
+    }
+  } else {
+    appData.rooms.forEach((room, i) => {
+      const amenities = (room.amenities || '').split(',').map(a => a.trim()).filter(Boolean);
+      const card = document.createElement('div');
+      card.className = 'room-card';
+      const waMsg = encodeURIComponent(`Hi, I'm interested in the ${room.name} at Smitha Aashraya Ladies PG. Price: ₹${room.price}/month`);
+      card.innerHTML = `
+        <div style="padding:14px 20px 0;display:flex;justify-content:space-between;align-items:center;">
+          <span class="room-type-badge" style="position:static;top:auto;left:auto;">${room.occupancy||'Single'}</span>
+          <button class="room-edit-btn" style="position:static;top:auto;right:auto;" onclick="editRoom(${i})">✏ Edit</button>
+        </div>
+        <div class="room-body">
+          <div class="room-name">${room.name}</div>
+          <div class="room-price">₹${Number(room.price).toLocaleString('en-IN')} <span>/ month</span></div>
+          <div class="room-amenities">${amenities.map(a=>`<span class="amenity-chip">${a}</span>`).join('')}</div>
+          <button class="room-enquire-btn" onclick="window.open('https://wa.me/${WA_NUMBER}?text=${waMsg}','_blank')">💬 Enquire Now</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+  // Add room card (admin only)
+  const addCard = document.createElement('div');
+  addCard.className = 'add-room-card';
+  addCard.innerHTML = '<span style="font-size:2rem">🛏️</span><span>+ Add New Room Type</span>';
+  addCard.onclick = () => openAddRoom();
+  grid.appendChild(addCard);
+}
+
+function openAddRoom() {
+  editingRoomIndex = -1;
+  document.getElementById('room-modal-title').textContent = 'Add Room Type';
+  document.getElementById('rm-name').value = '';
+  document.getElementById('rm-price').value = '';
+  document.getElementById('rm-amenities').value = '';
+  document.getElementById('rm-photo').value = '';
+  openModal('room-modal');
+}
+
+function editRoom(i) {
+  editingRoomIndex = i;
+  const room = appData.rooms[i];
+  document.getElementById('room-modal-title').textContent = 'Edit Room';
+  document.getElementById('rm-name').value = room.name || '';
+  document.getElementById('rm-occ').value = room.occupancy || 'Single';
+  document.getElementById('rm-price').value = room.price || '';
+  document.getElementById('rm-amenities').value = room.amenities || '';
+  openModal('room-modal');
+}
+
+function saveRoom() {
+  const name = document.getElementById('rm-name').value.trim();
+  const occupancy = document.getElementById('rm-occ').value;
+  const price = document.getElementById('rm-price').value;
+  const amenities = document.getElementById('rm-amenities').value.trim();
+  if (!name || !price) return;
+
+  function finalize(photoSrc) {
+    const roomObj = {name, occupancy, price, amenities, photo: photoSrc || ''};
+    if (!appData.rooms) appData.rooms = [];
+    if (editingRoomIndex >= 0) {
+      appData.rooms[editingRoomIndex] = {...appData.rooms[editingRoomIndex], ...roomObj};
+    } else {
+      appData.rooms.push(roomObj);
+    }
+    renderRooms();
+    saveData();
+    closeModal('room-modal');
+  }
+
+  finalize('');
+}
+
+// ===== REVIEWS =====
+function renderReviews() {
+  const grid = document.getElementById('reviews-grid');
+  grid.innerHTML = '';
+  REVIEWS.forEach((r, i) => {
+    const card = document.createElement('div');
+    card.className = 'review-card fade-in';
+    card.style.animationDelay = `${i * 0.1}s`;
+    const stars = '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars);
+    card.innerHTML = `
+      <div class="review-header">
+        <div class="review-avatar">${r.initials}</div>
+        <div class="review-meta">
+          <div class="review-name">${r.name}</div>
+          <div class="review-date">${r.date}</div>
+        </div>
+      </div>
+      <div class="review-stars">${stars}</div>
+      <div class="review-text">${r.text}</div>
+      <div class="google-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Google Verified
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ===== ADMIN MODE =====
+function unlockAdmin() {
+  isAdmin = true;
+  document.body.classList.add('admin-mode');
+  document.getElementById('admin-toast').classList.add('show');
+  enableEditing();
+  renderFeatures();
+  renderGallery();
+  renderRooms();
+}
+
+function lockAdmin() {
+  isAdmin = false;
+  document.body.classList.remove('admin-mode');
+  document.getElementById('admin-toast').classList.remove('show');
+  disableEditing();
+  renderFeatures();
+  renderGallery();
+  renderRooms();
+}
+
+function enableEditing() {
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    el.setAttribute('contenteditable', 'true');
+    el.addEventListener('blur', onEditBlur);
+  });
+}
+
+function disableEditing() {
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    el.setAttribute('contenteditable', 'false');
+    el.removeEventListener('blur', onEditBlur);
+  });
+}
+
+function onEditBlur(e) {
+  const key = e.target.dataset.key;
+  if (!key) return;
+  if (!appData.texts) appData.texts = {};
+  appData.texts[key] = e.target.textContent.trim();
+  saveData();
+}
+
+// ===== PASSWORD PROMPT =====
+function showPwModal() {
+  document.getElementById('pw-modal').classList.add('show');
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-error').textContent = '';
+  setTimeout(() => document.getElementById('pw-input').focus(), 100);
+}
+
+function checkPw() {
+  const val = document.getElementById('pw-input').value;
+  if (val === ADMIN_PASSWORD) {
+    document.getElementById('pw-modal').classList.remove('show');
+    unlockAdmin();
+  } else {
+    document.getElementById('pw-error').textContent = 'Incorrect password. Try again.';
+  }
+}
+
+// Mobile: tap logo 5 times
+let tapCount = 0, tapTimer;
+document.getElementById('nav-logo').addEventListener('click', () => {
+  if (isAdmin) { lockAdmin(); return; }
+  tapCount++;
+  clearTimeout(tapTimer);
+  tapTimer = setTimeout(() => tapCount = 0, 2000);
+  if (tapCount >= 5) { tapCount = 0; showPwModal(); }
+});
+
+// Desktop: press A then D within 1s
+let aPressed = false, aTimer;
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'a' || e.key === 'A') {
+    aPressed = true;
+    clearTimeout(aTimer);
+    aTimer = setTimeout(() => aPressed = false, 1000);
+  }
+  if ((e.key === 'd' || e.key === 'D') && aPressed) {
+    aPressed = false;
+    if (isAdmin) lockAdmin();
+    else showPwModal();
+  }
+  if (e.key === 'Escape') {
+    document.getElementById('pw-modal').classList.remove('show');
+    document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('show'));
+    closeLightbox();
+  }
+});
+
+// ===== MODALS =====
+function openModal(id) { document.getElementById(id).classList.add('show'); }
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); });
+});
+document.getElementById('pw-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('pw-modal'))
+    document.getElementById('pw-modal').classList.remove('show');
+});
+
+// ===== LIGHTBOX =====
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('show');
+}
+
+// ===== NAV TOGGLE =====
+document.getElementById('nav-toggle').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
+});
+
+// ===== FEATURE MODAL =====
+document.getElementById('add-feature-btn').addEventListener('click', () => {
+  openModal('feature-modal');
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ===== INIT =====
+loadData();
+</script>
+</body>
+</html>
